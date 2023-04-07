@@ -14,7 +14,7 @@ startBtn.addEventListener('click', () => {
     initializeBtn.style.color = "#aaa";
 
     (function loop() {
-        const t = setTimeout(() => {
+        const interval = setTimeout(() => {
             tiers.textContent++;
 
 
@@ -30,15 +30,15 @@ startBtn.addEventListener('click', () => {
         }, 15);
 
         stopBtn.addEventListener("click", () => {
-            clearTimeout(t);
+            clearTimeout(interval);
             initializeBtn.removeAttribute("disabled");
             initializeBtn.style.backgroundColor = "red";
             initializeBtn.style.color = "white";
 
             initializeBtn.addEventListener("click", () => {
-                tiers.textContent = 0;
-                seconds.textContent = 0;
-                minutes.textContent = 0;
+                tiers.textContent = "0" + 0;
+                seconds.textContent = "0" + 0;
+                minutes.textContent = "0" + 0;
             });
         });        
     })();
